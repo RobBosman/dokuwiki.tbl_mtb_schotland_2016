@@ -1,0 +1,7 @@
+base     tpl_mtb_schotland_2016
+author   Rob Bosman (Paulino Ruiz de Clavijo Vázquez)
+email    paulino@dte.us.es
+date     2016-02-01
+name     Robs Template
+desc     Template with topbar support
+url      http://www.dokuwiki.org/template:tpl_mtb_schotland_2016

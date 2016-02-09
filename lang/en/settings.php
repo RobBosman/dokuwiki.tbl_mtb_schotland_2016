@@ -1,6 +1,7 @@
 <?php
 
-if (!defined("DOKU_INC")) die();
+if (!defined("DOKU_INC"))
+  die();
 
 //header navigation
 $lang["tpl_mtb_schotland_2016:htmltopbar"] = "Use static HTML page. If not selected top bar page is taken from 'tpl_mtb_schotland_2016:pagetopbar' config";

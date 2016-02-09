@@ -9,8 +9,8 @@
  * @author Paulino Ruiz de Clavijo Vázquez <paulino@dte.us.es>
  * @link http://www.dokuwiki.org/template:tpl_mtb_schotland_2016
  */
-
-if (!defined("DOKU_INC")) die();
+if (!defined("DOKU_INC"))
+  die();
 
 $conf["tpl_mtb_schotland_2016:htmltopbar"] = 1;     // TRUE: Use html fixed or wiki page for topbar
 $conf["tpl_mtb_schotland_2016:pagetopbar"] = "topbar"; // Wiki page name

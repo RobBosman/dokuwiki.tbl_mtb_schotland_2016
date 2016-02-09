@@ -1,7 +1,7 @@
 base     tpl_mtb_schotland_2016
-author   Rob Bosman (Paulino Ruiz de Clavijo Vázquez)
-email    paulino@dte.us.es
+author   Rob Bosman (original template by Paulino Ruiz de Clavijo Vázquez)
+email    rob.bosman.nl@gmail.com
 date     2016-02-01
-name     Robs Template
+name     Template for 'MTB Schotland 2016'
 desc     Template with topbar support
-url      http://www.dokuwiki.org/template:tpl_mtb_schotland_2016
+url      https://github.com/RobBosman/dokuwiki.tpl_mtb_schotland_2016/archive/master.zip

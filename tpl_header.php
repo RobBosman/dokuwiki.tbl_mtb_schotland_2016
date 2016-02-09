@@ -2,9 +2,9 @@
 /**
  * Template header, included in the main and detail files
  */
-
 // must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC'))
+  die();
 
 $isLoggedIn = !empty($_SERVER['REMOTE_USER']);
 ?>
@@ -12,14 +12,14 @@ $isLoggedIn = !empty($_SERVER['REMOTE_USER']);
 <!-- ********** HEADER ********** -->
 <div id="dokuwiki__header"><div class="pad group">
 
-  <?php tpl_includeFile('header.html') ?>
+    <?php tpl_includeFile('header.html') ?>
 
-  <div class="headings group">
-    <ul class="a11y skip">
-      <li><a href="#dokuwiki__content"><?php echo $lang['skip_to_content']; ?></a></li>
-    </ul>
+    <div class="headings group">
+      <ul class="a11y skip">
+        <li><a href="#dokuwiki__content"><?php echo $lang['skip_to_content']; ?></a></li>
+      </ul>
 
-    <?php if (tpl_getConf('tpl_mtb_schotland_2016:showLogoInHeader')): ?>
+      <?php if (tpl_getConf('tpl_mtb_schotland_2016:showLogoInHeader')): ?>
         <h1><?php
           // get logo either out of the template images folder or data/media folder
           $logoSize = array();
@@ -29,30 +29,26 @@ $isLoggedIn = !empty($_SERVER['REMOTE_USER']);
           // @tpl_mtb_schotland_2016-template@ : Title is optional in this template            
           if (tpl_getConf("tpl_mtb_schotland_2016:showTitleInHeader"))
             tpl_link(
-              wl(),
-              '<img src="'.$logo.'" '.$logoSize[3].' alt="" /> <span>'.$conf['title'].'</span>',
-              'accesskey="h" title="[H]"'
-          );
+                wl(), '<img src="' . $logo . '" ' . $logoSize[3] . ' alt="" /> <span>' . $conf['title'] . '</span>', 'accesskey="h" title="[H]"'
+            );
           else
             tpl_link(
-              wl(),
-              '<img src="'.$logo.'" '.$logoSize[3].' alt="" />',
-              'accesskey="h" title="[H]"'
-             );
-        ?></h1>
-    <?php endif ?>
-    <?php if ($conf['tagline']): ?>
-      <p class="claim"><?php echo $conf['tagline']; ?></p>
-    <?php endif ?>
-  </div>
+                wl(), '<img src="' . $logo . '" ' . $logoSize[3] . ' alt="" />', 'accesskey="h" title="[H]"'
+            );
+          ?></h1>
+      <?php endif ?>
+      <?php if ($conf['tagline']): ?>
+        <p class="claim"><?php echo $conf['tagline']; ?></p>
+      <?php endif ?>
+    </div>
 
-  <div class="tools group">
-    <!-- USER TOOLS -->
-    <?php if ($conf['useacl']): ?>
-      <div id="dokuwiki__usertools">
-        <h3 class="a11y"><?php echo $lang['user_tools']; ?></h3>
-        <ul>
-          <?php
+    <div class="tools group">
+      <!-- USER TOOLS -->
+      <?php if ($conf['useacl']): ?>
+        <div id="dokuwiki__usertools">
+          <h3 class="a11y"><?php echo $lang['user_tools']; ?></h3>
+          <ul>
+            <?php
             if ($isLoggedIn) {
               echo '<li class="user">';
               tpl_userinfo(); /* 'Logged in as ...' */
@@ -62,67 +58,67 @@ $isLoggedIn = !empty($_SERVER['REMOTE_USER']);
             tpl_action('profile', 1, 'li');
             tpl_action('register', 1, 'li');
             tpl_action('login', 1, 'li');
-          ?>
-        </ul>
-      </div>
-    <?php endif ?>
+            ?>
+          </ul>
+        </div>
+      <?php endif ?>
 
-    <!-- SITE TOOLS -->
-    <div id="dokuwiki__sitetools">
-      <h3 class="a11y"><?php echo $lang['site_tools']; ?></h3>
-      <?php
+      <!-- SITE TOOLS -->
+      <div id="dokuwiki__sitetools">
+        <h3 class="a11y"><?php echo $lang['site_tools']; ?></h3>
+        <?php
         if (tpl_getConf('tpl_mtb_schotland_2016:showSearchBox'))
           tpl_searchform();
-      ?>
-      <div class="mobileTools">
-        <?php tpl_actiondropdown($lang['tools']); ?>
-      </div>
-      
-      <!-- TRANSLATION PLUGIN - @tpl_mtb_schotland_2016-template@ -->
-      <?php 
+        ?>
+        <div class="mobileTools">
+          <?php tpl_actiondropdown($lang['tools']); ?>
+        </div>
+
+        <!-- TRANSLATION PLUGIN - @tpl_mtb_schotland_2016-template@ -->
+        <?php
         if (tpl_getConf('tpl_mtb_schotland_2016:showTranslation')) {
-          $translation = &plugin_load('helper','translation');
+          $translation = &plugin_load('helper', 'translation');
           if ($translation)
             echo $translation->showTranslations();
         }
-      ?>
-      
-      <ul>
-        <?php
+        ?>
+
+        <ul>
+          <?php
           if ($isLoggedIn) {
             tpl_action('recent', 1, 'li');
             tpl_action('media', 1, 'li');
           }
           tpl_action('index', 1, 'li');
-        ?>
-      </ul>
+          ?>
+        </ul>
+      </div>
+
     </div>
 
-  </div>
-  
-  <!-- TOPBAR - @tpl_mtb_schotland_2016-template@ -->
-  <div class="topbar">
-    <?php
+    <!-- TOPBAR - @tpl_mtb_schotland_2016-template@ -->
+    <div class="topbar">
+      <?php
       if (tpl_getConf("tpl_mtb_schotland_2016:htmltopbar"))
         tpl_includeFile('topbar.php');
       else
-        tpl_include_page(tpl_getConf("tpl_mtb_schotland_2016:pagetopbar"),1,1);
-    ?>
-  </div>
-
-  <!-- BREADCRUMBS -->
-  <?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
-    <div class="breadcrumbs">
-      <?php if($conf['youarehere']): ?>
-        <div class="youarehere"><?php tpl_youarehere() ?></div>
-      <?php endif ?>
-      <?php if($conf['breadcrumbs']): ?>
-        <div class="trace"><?php tpl_breadcrumbs() ?></div>
-      <?php endif ?>
+        tpl_include_page(tpl_getConf("tpl_mtb_schotland_2016:pagetopbar"), 1, 1);
+      ?>
     </div>
-  <?php endif ?>
 
-  <?php html_msgarea() ?>
+    <!-- BREADCRUMBS -->
+    <?php if ($conf['breadcrumbs'] || $conf['youarehere']): ?>
+      <div class="breadcrumbs">
+        <?php if ($conf['youarehere']): ?>
+          <div class="youarehere"><?php tpl_youarehere() ?></div>
+        <?php endif ?>
+        <?php if ($conf['breadcrumbs']): ?>
+          <div class="trace"><?php tpl_breadcrumbs() ?></div>
+        <?php endif ?>
+      </div>
+    <?php endif ?>
 
-  <hr class="a11y" />
-</div></div><!-- /header -->
+    <?php html_msgarea() ?>
+
+    <hr class="a11y" />
+  </div></div><!-- /header -->

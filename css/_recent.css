@@ -7,40 +7,40 @@
 
 /* select type of revisions (media/pages) */
 .dokuwiki .changeType {
-    margin-bottom: .5em;
+  margin-bottom: .5em;
 }
 
 .dokuwiki form.changes ul li {
-    list-style: none;
-    margin-left: 0;
+  list-style: none;
+  margin-left: 0;
 }
 [dir=rtl] .dokuwiki form.changes ul li {
-    margin-right: 0;
+  margin-right: 0;
 }
 .dokuwiki form.changes ul li span,
 .dokuwiki form.changes ul li a {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 .dokuwiki form.changes ul li span.user a {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 .dokuwiki form.changes ul li.minor {
-    opacity: .7;
+  opacity: .7;
 }
 
 .dokuwiki form.changes li span.date {
 }
 .dokuwiki form.changes li a.diff_link {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 .dokuwiki form.changes li a.revisions_link {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 .dokuwiki form.changes li a.wikilink1,
 .dokuwiki form.changes li a.wikilink2 {
 }
 .dokuwiki form.changes li span.sum {
-    font-weight: bold;
+  font-weight: bold;
 }
 .dokuwiki form.changes li span.user {
 }
@@ -49,11 +49,11 @@
 /*____________ page navigator ____________*/
 
 .dokuwiki div.pagenav {
-    text-align: center;
-    margin: 1.4em 0;
+  text-align: center;
+  margin: 1.4em 0;
 }
 .dokuwiki div.pagenav-prev,
 .dokuwiki div.pagenav-next {
-    display: inline;
-    margin: 0 .5em;
+  display: inline;
+  margin: 0 .5em;
 }

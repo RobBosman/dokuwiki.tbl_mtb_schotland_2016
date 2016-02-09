@@ -5,6 +5,8 @@
 
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
+
+$isLoggedIn = !empty($_SERVER['REMOTE_USER']);
 ?>
 
 <!-- ********** HEADER ********** -->
@@ -51,10 +53,10 @@ if (!defined('DOKU_INC')) die();
         <h3 class="a11y"><?php echo $lang['user_tools']; ?></h3>
         <ul>
           <?php
-            if (!empty($_SERVER['REMOTE_USER'])) {
-                echo '<li class="user">';
-                tpl_userinfo(); /* 'Logged in as ...' */
-                echo '</li>';
+            if ($isLoggedIn) {
+              echo '<li class="user">';
+              tpl_userinfo(); /* 'Logged in as ...' */
+              echo '</li>';
             }
             tpl_action('admin', 1, 'li');
             tpl_action('profile', 1, 'li');
@@ -70,7 +72,7 @@ if (!defined('DOKU_INC')) die();
       <h3 class="a11y"><?php echo $lang['site_tools']; ?></h3>
       <?php
         if (tpl_getConf('tpl_mtb_schotland_2016:showSearchBox'))
-            tpl_searchform();
+          tpl_searchform();
       ?>
       <div class="mobileTools">
         <?php tpl_actiondropdown($lang['tools']); ?>
@@ -81,14 +83,16 @@ if (!defined('DOKU_INC')) die();
         if (tpl_getConf('tpl_mtb_schotland_2016:showTranslation')) {
           $translation = &plugin_load('helper','translation');
           if ($translation)
-              echo $translation->showTranslations();
+            echo $translation->showTranslations();
         }
-      ?>  
+      ?>
       
       <ul>
         <?php
-          tpl_action('recent', 1, 'li');
-          tpl_action('media', 1, 'li');
+          if ($isLoggedIn) {
+            tpl_action('recent', 1, 'li');
+            tpl_action('media', 1, 'li');
+          }
           tpl_action('index', 1, 'li');
         ?>
       </ul>

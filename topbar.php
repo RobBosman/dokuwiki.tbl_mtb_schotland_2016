@@ -14,9 +14,9 @@ if (!defined('DOKU_INC'))
   <div id="tab-main" class="tab-menu">
     <ul>
       <li><a href="<?php echo DOKU_REL; ?>wiki/wie">Wie</a></li>
-      <li><a href="<?php echo DOKU_REL; ?>wiki/waar">Waar</a></li>
-      <li><a href="<?php echo DOKU_REL; ?>wiki/wanneer">Wanneer</a></li>
-      <li><a href="<?php echo DOKU_REL; ?>wiki/hoe">Hoe</a></li>
+      <li><a href="<?php echo DOKU_REL; ?>wiki/tracks">Tracks</a></li>
+      <li><a href="<?php echo DOKU_REL; ?>wiki/overnachten">Overnachten</a></li>
+      <li><a href="<?php echo DOKU_REL; ?>wiki/agenda">Agenda</a></li>
     </ul>
   </div>
   <div id="tab-members" class="tab-menu">

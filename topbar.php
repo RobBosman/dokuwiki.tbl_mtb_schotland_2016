@@ -15,7 +15,6 @@ if (!defined('DOKU_INC'))
     <ul>
       <li><a href="<?php echo DOKU_REL; ?>wiki/wie">Wie</a></li>
       <li><a href="<?php echo DOKU_REL; ?>wiki/tracks">Tracks</a></li>
-      <li><a href="<?php echo DOKU_REL; ?>wiki/overnachtingen">Overnachtingen</a></li>
       <li><a href="<?php echo DOKU_REL; ?>wiki/agenda">Agenda</a></li>
     </ul>
   </div>

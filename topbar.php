@@ -13,9 +13,9 @@ if (!defined('DOKU_INC'))
   </a>
   <div id="tab-main" class="tab-menu">
     <ul>
-      <li><a href="<?php echo DOKU_REL; ?>wiki/wie">Wie</a></li>
       <li><a href="<?php echo DOKU_REL; ?>wiki/tracks">Tracks</a></li>
       <li><a href="<?php echo DOKU_REL; ?>wiki/agenda">Agenda</a></li>
+      <li><a href="<?php echo DOKU_REL; ?>wiki/wie">Wie</a></li>
     </ul>
   </div>
   <div id="tab-members" class="tab-menu">
